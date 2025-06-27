@@ -15,18 +15,6 @@ st.set_page_config(page_title="📈 Stock Price Prediction", layout="wide")
 st.title("📈 Stock Price Prediction Using LSTM")
 st.markdown("---")
 
-# ----------------------------
-# Callback for Progress Bar
-# ----------------------------
-class StreamlitCallback(Callback):
-    def __init__(self, epochs):
-        self.epochs = epochs
-        self.progress_bar = st.progress(0)
-        self.status = st.empty()
-
-    def on_epoch_end(self, epoch, logs=None):
-        self.progress_bar.progress((epoch + 1) / self.epochs)
-        self.status.text(f"Epoch {epoch + 1}/{self.epochs} • Loss: {logs['loss']:.6f}")
 
 # ----------------------------
 # User Inputs
