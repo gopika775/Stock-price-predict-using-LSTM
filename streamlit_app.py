@@ -77,12 +77,7 @@ X_test, y_test = create_sequences(test_data)
 # ----------------------------
 # Build and Train LSTM Model
 # ----------------------------
-model = Sequential([
-    LSTM(50, return_sequences=True, input_shape=(X_train.shape[1], 1)),
-    LSTM(50),
-    Dense(1)
-])
-model.compile(optimizer='adam', loss='mean_squared_error')
+
 
 st.subheader("⚙️ Training Progress")
 callback = StreamlitCallback(epochs)
