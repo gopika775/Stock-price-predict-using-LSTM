@@ -94,6 +94,17 @@ class StreamlitCallback(Callback):
         self.status_text.text(f"Epoch {epoch + 1}/{self.epochs} completed.")
 
 st.subheader("⚙️ Training Progress")
+
+# Define the LSTM model
+model = tf.keras.Sequential([
+    tf.keras.layers.LSTM(50, return_sequences=True, input_shape=(X_train.shape[1], X_train.shape[2])),
+    tf.keras.layers.LSTM(50),
+    tf.keras.layers.Dense(1)
+])
+
+model.compile(optimizer='adam', loss='mean_squared_error')
+
+
 callback = StreamlitCallback(epochs)
 history = model.fit(X_train, y_train, epochs=epochs, batch_size=32, verbose=0, callbacks=[callback])
 st.success("✅ Model Trained")
