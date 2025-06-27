@@ -7,5 +7,6 @@ seaborn
 scikit-learn
 plotly
 python_version<3.11
+keras
 
 
