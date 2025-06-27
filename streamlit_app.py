@@ -7,7 +7,10 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 import plotly.graph_objects as go
 import plotly.express as px
 import base64
-from keras.callbacks import Callback
+
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import LSTM, Dense
+from tensorflow.keras.callbacks import Callback
 
 
 # ----------------------------
