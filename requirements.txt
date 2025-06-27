@@ -1,12 +1,19 @@
+# Core UI
 streamlit==1.27.2
-yfinance
-pandas
-numpy
-matplotlib
-seaborn
-scikit-learn
-plotly
-python_version<3.11
 
+# Data Handling
+yfinance==0.2.63
+pandas==1.5.3
+numpy==1.24.4
+scikit-learn==1.2.2
 
+# Visualization
+matplotlib==3.7.1
+seaborn==0.12.2
+plotly==5.14.1
 
+# Deep Learning
+tensorflow==2.12.0
+
+# Optional: For clearer exceptions in Streamlit
+rich==13.5.2
