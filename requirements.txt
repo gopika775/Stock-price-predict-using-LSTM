@@ -1,9 +1,9 @@
-streamlit
+streamlit==1.27.2
+tensorflow==2.11.0
 yfinance
-numpy
 pandas
+numpy
 matplotlib
 seaborn
 scikit-learn
-tensorflow
 plotly
