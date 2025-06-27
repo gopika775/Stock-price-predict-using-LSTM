@@ -7,6 +7,8 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 import plotly.graph_objects as go
 import plotly.express as px
 import base64
+from keras.callbacks import Callback
+
 
 # ----------------------------
 # Page Config
@@ -77,7 +79,16 @@ X_test, y_test = create_sequences(test_data)
 # ----------------------------
 # Build and Train LSTM Model
 # ----------------------------
+class StreamlitCallback(Callback):
+    def __init__(self, epochs):
+        self.epochs = epochs
+        self.progress_bar = st.progress(0)
+        self.status_text = st.empty()
 
+    def on_epoch_end(self, epoch, logs=None):
+        progress = int((epoch + 1) / self.epochs * 100)
+        self.progress_bar.progress(progress)
+        self.status_text.text(f"Epoch {epoch + 1}/{self.epochs} completed.")
 
 st.subheader("⚙️ Training Progress")
 callback = StreamlitCallback(epochs)
