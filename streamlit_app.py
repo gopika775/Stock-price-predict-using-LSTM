@@ -6,9 +6,6 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 import plotly.graph_objects as go
 import plotly.express as px
-from keras.models import Sequential
-from keras.layers import LSTM, Dense
-from keras.callbacks import Callback
 import base64
 
 # ----------------------------
